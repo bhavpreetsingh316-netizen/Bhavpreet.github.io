@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Google</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#fff;
+}
+
+.container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:120px;
+}
+
+.logo{
+  font-size:64px;
+  font-weight:bold;
+  letter-spacing:-2px;
+}
+
+.logo span:nth-child(1){color:#4285F4}
+.logo span:nth-child(2){color:#DB4437}
+.logo span:nth-child(3){color:#F4B400}
+.logo span:nth-child(4){color:#4285F4}
+.logo span:nth-child(5){color:#0F9D58}
+.logo span:nth-child(6){color:#DB4437}
+
+input{
+  width:85%;
+  max-width:500px;
+  padding:14px 18px;
+  border-radius:24px;
+  border:1px solid #ddd;
+  margin-top:25px;
+  font-size:16px;
+  outline:none;
+}
+
+.result{
+  display:none;
+  margin-top:40px;
+  text-align:center;
+}
+
+.card{
+  background:linear-gradient(135deg,#ffd6e8,#ffeaf4);
+  padding:25px;
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+  max-width:320px;
+}
+
+.card img{
+  width:100%;
+  border-radius:18px;
+  margin-bottom:12px;
+}
+
+.hearts{
+  font-size:20px;
+}
+
+h2{
+  margin:8px 0 4px;
+}
+
+small{
+  color:#555;
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="searchPage">
+  <div class="logo">
+    <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+  </div>
+
+  <input id="query" placeholder="Search…" onkeydown="checkSearch(event)">
+</div>
+
+<div class="container result" id="resultPage">
+  <div class="card">
+    <!-- 🔴 REPLACE this image link with your girlfriend’s photo -->
+    <img src="YOUR_GIRLFRIEND_IMAGE_LINK_HERE" alt="My Girl">
+
+    <div class="hearts">💗💞💗</div>
+    <h2>The Most Gorgeous Girl in the World</h2>
+    <small>My heart chose you. Always.</small>
+  </div>
+</div>
+
+<script>
+function checkSearch(e){
+  if(e.key === "Enter"){
+    const q = document.getElementById("query").value.toLowerCase().trim();
+
+    const match = [
+      "most beautiful girl",
+      "most hottest girl",
+      "most prettiest girl",
+      "most gorgeous girl"
+    ];
+
+    if(match.includes(q)){
+      document.getElementById("searchPage").style.display="none";
+      document.getElementById("resultPage").style.display="flex";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
